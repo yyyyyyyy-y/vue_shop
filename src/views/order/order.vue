@@ -1,18 +1,18 @@
 <template>
   <div>
-    <Header></Header>
+    <OderHeader></OderHeader>
     <router-view></router-view>
-    <Footer></Footer>
+    <OrderFooter></OrderFooter>
   </div>
 </template>
 <script>
-import Footer from '@/views/order/components/Footer'
-import Header from '@/views/order/components/Header'
+import OderHeader from '@/views/order/components/Header'
+import OrderFooter from '@/views/order/components/Footer'
 export default {
-  name: 'Name',
+  name: 'order',
   components: {
-    Header,
-    Footer
+    OderHeader,
+    OrderFooter
   }
 }
 </script>

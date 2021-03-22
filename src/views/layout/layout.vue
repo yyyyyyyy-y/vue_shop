@@ -1,18 +1,18 @@
 <template>
   <div>
-    <Header></Header>
+    <LayOutHeader></LayOutHeader>
     <router-view></router-view>
-    <Footer></Footer>
+    <LayOutFooter></LayOutFooter>
   </div>
 </template>
 <script>
-import Footer from '@/views/layout/components/Footer'
-import Header from '@/views/layout/components/Header'
+import LayOutHeader from '@/views/layout/components/Header'
+import LayOutFooter from '@/views/layout/components/Footer'
 export default {
-  name: 'LayOut',
+  name: 'layout',
   components: {
-    Header,
-    Footer
+    LayOutHeader,
+    LayOutFooter
   }
 }
 </script>

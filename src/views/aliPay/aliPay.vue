@@ -1,9 +1,10 @@
 <template>
-  <div>index</div>
+<div>aliPay</div>
 </template>
+
 <script>
 export default {
-  name: 'index',
+  name: 'ali-pay',
   data () {
     return {
 
@@ -11,3 +12,7 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+
+</style>

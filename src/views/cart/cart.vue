@@ -1,9 +1,10 @@
 <template>
-  <div>index</div>
+<div>cart</div>
 </template>
+
 <script>
 export default {
-  name: 'index',
+  name: 'cart',
   data () {
     return {
 
@@ -11,3 +12,7 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+
+</style>
