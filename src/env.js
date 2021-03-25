@@ -17,6 +17,7 @@ switch (process.env.NODE_ENV) {
   case 'prod':
     baseURL = 'http://mall-pre.springboot.cn/api'
     break
+  // 以上的情况都不是
   default:
     baseURL = 'http://mall-pre.springboot.cn/api'
     break

@@ -5,14 +5,11 @@ import './plugins/element.js'
 import store from './store'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
-import env from './env'
+// import env from './env'
 
 Vue.use(VueAxios, axios)// 把axios对象挂载上去
-// 只使用axios时，每个页面都得导入，很麻烦，而vue-axios把作用域对象挂载到
-// vue实例上面去，方便用this调用
-// 根据前端跨域做调整，我们先暂时采取代理的方式
-axios.defaults.baseURL = '/api'
-axios.defaults.timeout = 6000
+// 只使用axios时，每个页面都得导入，很麻烦，而vue-axios把作用域对象挂载到vue实例上面去，方便用this调用
+
 // 接口错误拦截
 axios.interceptors.response.use(function (response) {
   const res = response.data // 获取接口的整个信息（包括status，data，msg）
@@ -26,8 +23,18 @@ axios.interceptors.response.use(function (response) {
   }
 })
 
+// mock开关
+const mock = true
+if (mock) {
+  // 记得不要用import，import是预编译，require是需要执行到这里才会加载，不然永远都会拦截
+  require('./mock/api')
+}
+
+// 根据前端跨域做调整，我们先暂时采取代理的方式
+axios.defaults.baseURL = '/api'
+axios.defaults.timeout = 6000
 // 根据环境变量获取不同的请求地址
-axios.defaults.baseURL = env.baseURL
+// axios.defaults.baseURL = env.baseURL
 
 Vue.config.productionTip = false// 生产环境的提示
 
